@@ -239,9 +239,11 @@
         let buttonHTML = [];
         heroAnime.forEach((a, i) => {
           buttonHTML[i] = `<div class="hero-buttons">
-              <a href="pages/anime-detail.html?id=${a.id}"
+              <a href="${getDetailUrl(a.id)}"
                class="btn-primary">▶ Watch Now</a>
-              <button class="btn-secondary" onclick="toggleWatchlistItem('${a.id}',
+              <button class="btn-secondary" onclick="toggleWatchlistItem('${
+                a.id
+              }',
               '${a.title}')">+ Watchlist</button>
             </div>`;
         });

@@ -39,22 +39,35 @@ function initMobileNav() {
 }
 
 // ---- Active Nav Link ----
+// window.location.pathname on GitHub Pages looks like:
+//   /hakuanime/                          ← homepage
+//   /hakuanime/pages/watchlist.html      ← inner page
+//
+// We check whether the path ends with a known filename or folder segment
+// rather than checking for '/' alone, so it works at any subfolder depth.
 function markActiveNavLink() {
   const path = window.location.pathname;
+
+  // Determine which section we are in based on the current path
+  const isHome =
+    path.endsWith("index.html") || path.endsWith("/hakuanime/") || path === "/";
+  const isWatchlist = path.includes("watchlist");
+  const isAbout = path.includes("about");
+  const isContact = path.includes("contact");
+  const isDetail = path.includes("anime-detail");
+
   document
     .querySelectorAll(".nav-link, .mobile-nav .nav-link")
     .forEach((link) => {
       const href = link.getAttribute("href") || "";
-      if (
-        ((path.endsWith("index.html") || path === "/" || path.endsWith("/")) &&
-          href.includes("index")) ||
-        (path.includes("watchlist") && href.includes("watchlist")) ||
-        (path.includes("about") && href.includes("about")) ||
-        (path.includes("contact") && href.includes("contact")) ||
-        (path.includes("anime-detail") && href.includes("anime-detail"))
-      ) {
-        link.classList.add("active");
-      }
+      const shouldBeActive =
+        (isHome && (href.includes("index") || href === "#")) ||
+        (isWatchlist && href.includes("watchlist")) ||
+        (isAbout && href.includes("about")) ||
+        (isContact && href.includes("contact")) ||
+        (isDetail && href.includes("anime-detail"));
+
+      link.classList.toggle("active", shouldBeActive);
     });
 }
 
