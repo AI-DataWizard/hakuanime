@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Detail — HakuAnime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bebas+Neue&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+      <div class="header-inner">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon">H</div>
+          <span class="logo-text">HAKU<span>ANIME</span></span>
+        </a>
+        <nav id="nav-menu">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../index.html#popular" class="nav-link">Popular</a>
+          <a href="watchlist.html" class="nav-link">Watchlist</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn theme-toggle" aria-label="Toggle theme">
+            <span class="dark-mode-icon">☀️</span>
+          </button>
+          <a href="watchlist.html" class="icon-btn"
+            ><i class="fas fa-bookmark"></i
+          ></a>
+        </div>
+        <button class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <nav class="mobile-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="watchlist.html" class="nav-link">Watchlist</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- ===== DETAIL HERO ===== -->
+    <div class="detail-hero" id="detail-hero">
+      <img src="" alt="" class="detail-hero-bg" id="detail-hero-bg" />
+      <div class="detail-hero-overlay"></div>
+    </div>
+
+    <!-- ===== DETAIL CONTENT ===== -->
+    <div class="container">
+      <div class="breadcrumb" id="detail-breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span id="breadcrumb-title">Loading...</span>
+      </div>
+      <div class="detail-content" id="detail-content">
+        <div class="detail-poster-wrap">
+          <img src="" alt="" class="detail-poster" id="detail-poster" />
+        </div>
+        <div class="detail-info" id="detail-info">
+          <p style="color: var(--text-muted)">Loading anime details...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== VIDEO ===== -->
+    <div class="video-section" id="video-section" style="display: none">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Watch Trailer</h2>
+        </div>
+        <div class="video-wrapper">
+          <iframe
+            id="video-player"
+            src=""
+            title="Anime Trailer"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== RELATED ===== -->
+    <section class="section" id="related-section" style="display: none">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">More Like This</h2>
+        </div>
+        <div class="anime-grid" id="related-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <span class="logo-text"
+              >HAKU<span style="color: var(--primary-red)">ANIME</span></span
+            >
+            <p class="footer-desc">Your home for free anime streaming.</p>
+          </div>
+          <div>
+            <h4 class="footer-heading">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html" class="footer-link">Home</a></li>
+              <li>
+                <a href="watchlist.html" class="footer-link">My Watchlist</a>
+              </li>
+              <li><a href="about.html" class="footer-link">About Us</a></li>
+              <li><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-heading">Genres</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html" class="footer-link">Action</a></li>
+              <li><a href="../index.html" class="footer-link">Fantasy</a></li>
+              <li><a href="../index.html" class="footer-link">Drama</a></li>
+              <li><a href="../index.html" class="footer-link">Comedy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-heading">Legal</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Terms of Service</a></li>
+              <li><a href="#" class="footer-link">DMCA</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copy"
+            >© Created By
+            <a
+              href="https://ai-datawizard.github.io/Portfolio/"
+              class="footer-link"
+              target="_blank"
+              >Tadiwa Chopamba</a
+            >
+            All rights reserved.</span
+          >
+          <div class="footer-socials">
+            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-discord"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-reddit"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <script src="../js/notifications.js"></script>
+    <script src="../js/watchlist.js"></script>
+    <script src="../js/dark-mode.js"></script>
+    <script src="../js/anime-data.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      (async () => {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        const anime = await loadAnime();
+        window.allAnime = anime;
+
+        const a = anime.find((x) => x.id === id);
+        if (!a) {
+          document.getElementById("detail-info").innerHTML = `
+          <h1 style="font-size:32px;margin-bottom:16px">Anime Not Found</h1>
+          <p style="color:var(--text-secondary)">The anime you're looking for doesn't exist.</p>
+          <a href="../index.html" class="btn-primary" style="display:inline-flex;margin-top:16px">← Back to Home</a>
+        `;
+          return;
+        }
+
+        // Page title
+        document.title = `${a.title} — HakuAnime`;
+
+        // Hero bg
+        document.getElementById("detail-hero-bg").src = a.banner;
+        document.getElementById("detail-hero-bg").alt = a.title;
+
+        // Breadcrumb
+        document.getElementById("breadcrumb-title").textContent = a.title;
+
+        // Poster
+        document.getElementById("detail-poster").src = a.cover;
+        document.getElementById("detail-poster").alt = a.title;
+
+        // Info
+        const inWatchlist = isInWatchlist(a.id);
+        document.getElementById("detail-info").innerHTML = `
+        <h1 class="detail-title">${a.title}</h1>
+        <p class="detail-japanese">${a.japanese}</p>
+        <div class="detail-badges">
+          <span class="detail-badge rating">⭐ ${a.rating} / 10</span>
+          <span class="detail-badge episodes"><i class="fas fa-play-circle"></i> ${
+            a.episodes
+          } Episodes</span>
+          <span class="detail-badge status-${a.status.toLowerCase()}">${
+          a.status
+        }</span>
+          <span class="detail-badge episodes">${a.year}</span>
+          <span class="detail-badge episodes">${a.studio}</span>
+        </div>
+        <p class="detail-desc">${a.description}</p>
+        <div class="detail-actions">
+          <a href="${
+            a.trailer_reg
+          }" class="btn-primary" target="_blank">▶ Watch Trailer</a>
+          <button class="btn-secondary watchlist-action-btn" onclick="handleWatchlistToggle('${
+            a.id
+          }', '${a.title}')">
+            ${inWatchlist ? "✓ In Watchlist" : "+ Add to Watchlist"}
+          </button>
+        </div>
+        <div class="detail-genres">
+          ${a.genre
+            .map((g) => `<span class="detail-genre-tag">${g}</span>`)
+            .join("")}
+          ${a.tags
+            .map(
+              (t) =>
+                `<span class="detail-genre-tag" style="opacity:0.6">#${t}</span>`
+            )
+            .join("")}
+        </div>
+      `;
+
+        // Video
+        if (a.trailer) {
+          document.getElementById("video-section").style.display = "";
+          document.getElementById("video-player").src = a.trailer + "?rel=0";
+        }
+
+        // Related anime (same genre)
+        const related = anime
+          .filter(
+            (x) => x.id !== a.id && x.genre.some((g) => a.genre.includes(g))
+          )
+          .slice(0, 6);
+        if (related.length > 0) {
+          document.getElementById("related-section").style.display = "";
+          const rGrid = document.getElementById("related-grid");
+          related.forEach((r) => rGrid.appendChild(createAnimeCard(r)));
+        }
+      })();
+
+      function handleWatchlistToggle(id, title) {
+        const added = toggleWatchlistItem(id, title);
+        const btn = document.querySelector(".watchlist-action-btn");
+        if (btn)
+          btn.textContent = added ? "✓ In Watchlist" : "+ Add to Watchlist";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — HakuAnime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bebas+Neue&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <!--EmailJS Script Tag-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      // Initialise EmailJS with your account Public Key.
+      // Runs immediately when the browser parses the <head> so emailjs is
+      // always ready before the user can interact with the form.
+      // Replace 'YOUR_PUBLIC_KEY' → EmailJS Dashboard → Account → Public Key
+      (function () {
+        emailjs.init({ publicKey: "pEKjRsfqu93afAK7-" });
+      })();
+    </script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-inner">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon">H</div>
+          <span class="logo-text">HAKU<span>ANIME</span></span>
+        </a>
+        <nav id="nav-menu">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="watchlist.html" class="nav-link">Watchlist</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn theme-toggle">
+            <span class="dark-mode-icon">☀️</span>
+          </button>
+          <a href="watchlist.html" class="icon-btn"
+            ><i class="fas fa-bookmark"></i
+          ></a>
+        </div>
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <nav class="mobile-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="watchlist.html" class="nav-link">Watchlist</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </nav>
+
+    <div class="page-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Contact</span>
+        </div>
+        <h1>Get In Touch</h1>
+        <p>
+          We'd love to hear from you — suggestions, DMCA requests, or just to
+          say hi.
+        </p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-bottom: 80px">
+      <div class="contact-grid">
+        <!-- Info -->
+        <div class="contact-info-card">
+          <h2>Contact Info</h2>
+          <p>
+            Reach out to us through any of the channels below. We typically
+            respond within 24–48 hours.
+          </p>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-item-text">
+              <small>Email</small>
+              <a href="mailto:tadiwachopambaweb@gmail.com" target="_blank"
+                >tadiwachopambaweb@gmail.com</a
+              >
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fab fa-github"></i></div>
+            <div class="contact-item-text">
+              <small>GitHub</small>
+              <a href="https://github.com/AI-DataWizard" target="_blank"
+                >AI-DataWizard</a
+              >
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <div class="contact-item-text">
+              <small>Instagram</small>
+              <a
+                href="https://www.instagram.com/tadiwachopamba/"
+                target="_blank"
+                >@tadiwachopamba</a
+              >
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="contact-item-text">
+              <small>Linkedin</small>
+              <a
+                href="https://www.linkedin.com/in/tadiwa-chopamba-9b80b5289"
+                target="_blank"
+                >Tadiwa Chopamba</a
+              >
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="contact-item-text">
+              <small>WhatsApp</small>
+              <a href="https://wa.me/+27684611548" target="_blank"
+                >+27684611548</a
+              >
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 24px;
+              padding: 20px;
+              background: rgba(230, 36, 41, 0.08);
+              border: 1px solid rgba(230, 36, 41, 0.2);
+              border-radius: var(--radius-sm);
+            ">
+            <p
+              style="
+                font-size: 12px;
+                color: var(--text-secondary);
+                line-height: 1.7;
+              ">
+              <strong style="color: var(--primary-red)">Note:</strong> For
+              quicker responses, please include the anime title in your message
+              subject if reporting a broken stream.
+            </p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-card">
+          <h2>Send a Message</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Naruto"
+                id="fname" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Uzumaki"
+                id="lname" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-input"
+              placeholder="your@email.com"
+              id="email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <select class="form-input" id="subject">
+              <option value="">Select a topic...</option>
+              <option>General Inquiry</option>
+              <option>Suggest an Anime</option>
+              <option>Report a Broken Stream</option>
+              <option>DMCA / Copyright</option>
+              <option>Feedback</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea
+              class="form-input"
+              placeholder="Write your message here..."
+              id="message"></textarea>
+          </div>
+          <button
+            class="btn-primary"
+            id="send-btn"
+            style="width: 100%; justify-content: center"
+            onclick="handleSubmit()">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <span class="logo-text"
+              >HAKU<span style="color: var(--primary-red)">ANIME</span></span
+            >
+            <p class="footer-desc">Your home for free anime streaming.</p>
+          </div>
+          <div>
+            <h4 class="footer-heading">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html" class="footer-link">Home</a></li>
+              <li>
+                <a href="watchlist.html" class="footer-link">Watchlist</a>
+              </li>
+              <li><a href="about.html" class="footer-link">About</a></li>
+              <li><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+          <div></div>
+          <div>
+            <h4 class="footer-heading">Legal</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copy"
+            >© Created By
+            <a
+              href="https://ai-datawizard.github.io/Portfolio/"
+              class="footer-link"
+              target="_blank"
+              >Tadiwa Chopamba</a
+            >
+            All rights reserved.</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/watchlist.js"></script>
+    <script src="../js/dark-mode.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      async function handleSubmit() {
+        // ── Step 1: Collect values from every input ──────────────────────────
+        const fname = document.getElementById("fname").value.trim();
+        const lname = document.getElementById("lname").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value.trim();
+
+        // ── Step 2: Validate — stop here if anything is missing / malformed ──
+        if (!fname || !email || !subject || !message) {
+          showToast("Please fill in all required fields.", "error");
+          return;
+        }
+        // Basic e-mail format check (must contain @ and at least one dot after it)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showToast("Please enter a valid email address.", "error");
+          return;
+        }
+
+        // ── Step 3: Lock the send button to prevent duplicate submissions ────
+        const sendBtn = document.getElementById("send-btn");
+        sendBtn.disabled = true;
+        sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+
+        // ── Step 4: Build the params object ──────────────────────────────────
+        // Each key here maps to a {{placeholder}} in your EmailJS template.
+        // e.g. in the template body write {{message}} and EmailJS replaces it
+        // with the value of template_params.message at send time.
+        const templateParams = {
+          name: `${fname} ${lname}`.trim(), // → {{name}}       in template
+          email: email, // → {{email}}      in template
+          time: new Date().toLocaleString(), // → {{time}}       in template
+          from_name: `${fname} ${lname}`.trim(), // → {{from_name}}  in template
+          from_email: email, // → {{from_email}} in template
+          subject: subject, // → {{subject}}    in template
+          message: message, // → {{message}}    in template
+          to_email: "tadiwachopambaweb@gmail.com", // → {{to_email}}   in template
+          //            ↑ set this as the "To Email" field in your EmailJS template
+        };
+
+        try {
+          await emailjs.send(
+            "service_p4v2oep",
+            "template_s89wo1i",
+            templateParams
+          );
+
+          // ── Success path ──────────────────────────────────────────────────
+          showToast(
+            "Message sent! We'll get back to you soon. 🎉",
+            "success",
+            4000
+          );
+
+          // Clear every field so the form is fresh for a new message
+          document.getElementById("fname").value = "";
+          document.getElementById("lname").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("subject").value = "";
+          document.getElementById("message").value = "";
+        } catch (error) {
+          // ── Failure path ──────────────────────────────────────────────────
+          // error.text is the human-readable reason EmailJS returns
+          // (e.g. "The Public Key is invalid", "Daily quota exceeded")
+          console.error("EmailJS error:", error);
+          showToast(
+            `Failed to send: ${error.text || "Unknown error"}`,
+            "error",
+            5000
+          );
+        } finally {
+          // ── Always runs — unlock the button whether send succeeded or failed
+          sendBtn.disabled = false;
+          sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        }
+      }
+    </script>
+  </body>
+</html>

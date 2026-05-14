@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HakuAnime — Watch Anime Free</title>
+    <meta
+      name="description"
+      content="Stream your favourite anime for free on HakuAnime. Thousands of titles, no ads." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bebas+Neue&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">H</div>
+          <span class="logo-text">HAKU<span>ANIME</span></span>
+        </a>
+
+        <nav id="nav-menu">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="#popular" class="nav-link">Popular</a>
+          <a href="#trending" class="nav-link">Trending</a>
+          <a href="pages/watchlist.html" class="nav-link">Watchlist</a>
+          <a href="pages/about.html" class="nav-link">About</a>
+          <a href="pages/contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="header-search">
+            <input
+              type="text"
+              class="search-input-field"
+              placeholder="Search anime…"
+              autocomplete="off" />
+            <button aria-label="Search"><i class="fas fa-search"></i></button>
+          </div>
+          <button class="icon-btn theme-toggle" aria-label="Toggle theme">
+            <span class="dark-mode-icon">☀️</span>
+          </button>
+          <a
+            href="pages/watchlist.html"
+            class="icon-btn"
+            aria-label="Watchlist">
+            <i class="fas fa-bookmark"></i>
+          </a>
+        </div>
+
+        <button class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="pages/watchlist.html" class="nav-link">Watchlist</a>
+      <a href="pages/about.html" class="nav-link">About</a>
+      <a href="pages/contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+      <!-- Slides injected by JS -->
+      <div class="hero-dots" id="hero-dots"></div>
+    </section>
+
+    <!-- ===== SEARCH RESULTS ===== -->
+    <section id="search-results-section">
+      <div class="container">
+        <div class="search-results-title" id="search-results-title"></div>
+
+        <!-- Genre filter -->
+        <div class="filter-bar" id="filter-bar">
+          <button class="filter-btn active" data-genre="All">All</button>
+          <button class="filter-btn" data-genre="Action">Action</button>
+          <button class="filter-btn" data-genre="Drama">Drama</button>
+          <button class="filter-btn" data-genre="Fantasy">Fantasy</button>
+          <button class="filter-btn" data-genre="Comedy">Comedy</button>
+          <button class="filter-btn" data-genre="Horror">Horror</button>
+          <button class="filter-btn" data-genre="Mystery">Mystery</button>
+          <button class="filter-btn" data-genre="Thriller">Thriller</button>
+        </div>
+
+        <div class="anime-grid" id="search-results-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===== MAIN SECTIONS ===== -->
+    <div id="main-sections">
+      <!-- Popular -->
+      <section class="section" id="popular">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Popular Anime</h2>
+            <a href="#" class="section-link"
+              >View All <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="anime-grid" id="popular-grid"></div>
+        </div>
+      </section>
+
+      <!-- Trending -->
+      <section class="section" id="trending" style="padding-top: 0">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Trending Now</h2>
+            <a href="#" class="section-link"
+              >View All <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="trending-grid" id="trending-grid"></div>
+        </div>
+      </section>
+
+      <!-- Browse by Genre -->
+      <section class="section" style="padding-top: 0">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Browse All</h2>
+          </div>
+          <div class="filter-bar" id="browse-filter-bar">
+            <button class="filter-btn active" data-genre="All">All</button>
+            <button class="filter-btn" data-genre="Action">Action</button>
+            <button class="filter-btn" data-genre="Drama">Drama</button>
+            <button class="filter-btn" data-genre="Fantasy">Fantasy</button>
+            <button class="filter-btn" data-genre="Comedy">Comedy</button>
+            <button class="filter-btn" data-genre="Horror">Horror</button>
+            <button class="filter-btn" data-genre="Mystery">Mystery</button>
+            <button class="filter-btn" data-genre="Thriller">Thriller</button>
+          </div>
+          <div class="anime-grid" id="all-anime-grid"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <span class="logo-text"
+              >HAKU<span style="color: var(--primary-red)">ANIME</span></span
+            >
+            <p class="footer-desc">
+              Your home for free anime streaming. Watch thousands of titles in
+              HD with no subscription required.
+            </p>
+          </div>
+          <div>
+            <h4 class="footer-heading">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li>
+                <a href="pages/watchlist.html" class="footer-link"
+                  >My Watchlist</a
+                >
+              </li>
+              <li>
+                <a href="pages/about.html" class="footer-link">About Us</a>
+              </li>
+              <li>
+                <a href="pages/contact.html" class="footer-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-heading">Genres</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Action</a></li>
+              <li><a href="#" class="footer-link">Fantasy</a></li>
+              <li><a href="#" class="footer-link">Drama</a></li>
+              <li><a href="#" class="footer-link">Comedy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-heading">Legal</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Terms of Service</a></li>
+              <li><a href="#" class="footer-link">DMCA</a></li>
+              <li><a href="#" class="footer-link">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copy"
+            >© Created By
+            <a
+              href="https://ai-datawizard.github.io/Portfolio/"
+              class="footer-link"
+              target="_blank"
+              >Tadiwa Chopamba</a
+            >
+            All rights reserved.</span
+          >
+          <div class="footer-socials">
+            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-discord"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-reddit"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/notifications.js"></script>
+    <script src="js/watchlist.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/anime-data.js"></script>
+    <script src="js/search-filter.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      (async () => {
+        const anime = await loadAnime();
+        window.allAnime = anime;
+
+        // ---- Hero Slides ----
+        const heroAnime = anime
+          .filter((a) => a.trending || a.popular)
+          .slice(0, 6);
+        const heroEl = document.getElementById("hero");
+        const dotsEl = document.getElementById("hero-dots");
+        let aIds = [];
+        let buttonHTML = [];
+        heroAnime.forEach((a, i) => {
+          buttonHTML[i] = `<div class="hero-buttons">
+              <a href="pages/anime-detail.html?id=${a.id}"
+               class="btn-primary">▶ Watch Now</a>
+              <button class="btn-secondary" onclick="toggleWatchlistItem('${a.id}',
+              '${a.title}')">+ Watchlist</button>
+            </div>`;
+        });
+
+        heroAnime.forEach((a, i) => {
+          const slide = document.createElement("div");
+          slide.className = "hero-slide";
+          aIds[i] = a.id;
+          let htmlCode = `<img src="${a.banner}" alt="${
+            a.title
+          }" class="hero-bg">
+          <div class="hero-gradient"></div>
+          <div class="hero-content">
+            <div class="hero-label">⚡ Featured</div>
+            <h1 class="hero-title">${a.title}</h1>
+            <p class="hero-japanese">${a.japanese}</p>
+            <div class="hero-meta">
+              <div class="hero-rating">⭐ ${a.rating}</div>
+              <div class="hero-genres">
+                ${a.genre
+                  .slice(0, 3)
+                  .map((g) => `<span class="genre-tag">${g}</span>`)
+                  .join("")}
+              </div>
+            </div>
+            <p class="hero-desc">${a.description}</p>`;
+
+          htmlCode += buttonHTML[i];
+          slide.innerHTML = htmlCode;
+
+          const dot = document.createElement("button");
+          dot.className = "hero-dot";
+          dot.setAttribute("aria-label", `Slide ${i + 1}`);
+          dotsEl.appendChild(dot);
+          heroEl.insertBefore(slide, dotsEl);
+        });
+
+        initHeroCarousel(document.querySelectorAll(".hero-slide"));
+
+        // ---- Popular Grid ----
+        const popularGrid = document.getElementById("popular-grid");
+        anime
+          .filter((a) => a.popular)
+          .slice(0, 6)
+          .forEach((a) => {
+            popularGrid.appendChild(createAnimeCard(a));
+          });
+
+        // ---- Trending Grid ----
+        const trendingGrid = document.getElementById("trending-grid");
+        anime
+          .filter((a) => a.trending)
+          .slice(0, 4)
+          .forEach((a, i) => {
+            trendingGrid.appendChild(createTrendingCard(a, i));
+          });
+
+        // ---- All Anime Grid ----
+        const allGrid = document.getElementById("all-anime-grid");
+        function renderAllGrid(genre) {
+          allGrid.innerHTML = "";
+          const filtered =
+            genre === "All"
+              ? anime
+              : anime.filter((a) => a.genre.includes(genre));
+          filtered.forEach((a) => allGrid.appendChild(createAnimeCard(a)));
+        }
+        renderAllGrid("All");
+
+        // Browse filter buttons
+        document
+          .querySelectorAll("#browse-filter-bar .filter-btn")
+          .forEach((btn) => {
+            btn.addEventListener("click", () => {
+              document
+                .querySelectorAll("#browse-filter-bar .filter-btn")
+                .forEach((b) => b.classList.remove("active"));
+              btn.classList.add("active");
+              renderAllGrid(btn.dataset.genre);
+            });
+          });
+      })();
+    </script>
+  </body>
+</html>

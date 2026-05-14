@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Watchlist — HakuAnime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bebas+Neue&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-inner">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon">H</div>
+          <span class="logo-text">HAKU<span>ANIME</span></span>
+        </a>
+        <nav id="nav-menu">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="watchlist.html" class="nav-link active">Watchlist</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn theme-toggle">
+            <span class="dark-mode-icon">☀️</span>
+          </button>
+          <a href="watchlist.html" class="icon-btn"
+            ><i class="fas fa-bookmark"></i
+          ></a>
+        </div>
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <nav class="mobile-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="watchlist.html" class="nav-link active">Watchlist</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="page-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>My Watchlist</span>
+        </div>
+        <h1>
+          <i
+            class="fas fa-bookmark"
+            style="color: var(--primary-red); margin-right: 12px"></i
+          >My Watchlist
+        </h1>
+        <p id="watchlist-count">Loading your saved anime...</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-bottom: 80px">
+      <div id="watchlist-content"></div>
+    </div>
+
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <span class="logo-text"
+              >HAKU<span style="color: var(--primary-red)">ANIME</span></span
+            >
+            <p class="footer-desc">Your home for free anime streaming.</p>
+          </div>
+          <div>
+            <h4 class="footer-heading">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html" class="footer-link">Home</a></li>
+              <li>
+                <a href="watchlist.html" class="footer-link">Watchlist</a>
+              </li>
+              <li><a href="about.html" class="footer-link">About</a></li>
+              <li><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+          <div></div>
+          <div>
+            <h4 class="footer-heading">Legal</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copy"
+            >© Created By
+            <a
+              href="https://ai-datawizard.github.io/Portfolio/"
+              class="footer-link"
+              target="_blank"
+              >Tadiwa Chopamba</a
+            >
+            All rights reserved.</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <script src="../js/notifications.js"></script>
+    <script src="../js/watchlist.js"></script>
+    <script src="../js/dark-mode.js"></script>
+    <script src="../js/anime-data.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      (async () => {
+        const anime = await loadAnime();
+        window.allAnime = anime;
+        renderWatchlistPage();
+      })();
+
+      function renderWatchlistPage() {
+        const ids = getWatchlist();
+        const countEl = document.getElementById("watchlist-count");
+        const content = document.getElementById("watchlist-content");
+
+        if (ids.length === 0) {
+          countEl.textContent = "0 anime saved";
+          content.innerHTML = `
+          <div class="watchlist-empty">
+            <div class="watchlist-empty-icon">📚</div>
+            <h2>Your watchlist is empty</h2>
+            <p>Browse anime and click "+ Add to Watchlist" to save titles here.</p>
+            <a href="../index.html" class="btn-primary">Browse Anime</a>
+          </div>
+        `;
+          return;
+        }
+
+        const savedAnime = window.allAnime.filter((a) => ids.includes(a.id));
+        countEl.textContent = `${savedAnime.length} anime saved`;
+
+        const grid = document.createElement("div");
+        grid.className = "watchlist-grid";
+
+        savedAnime.forEach((a) => {
+          const card = document.createElement("div");
+          card.className = "watchlist-card";
+          card.dataset.id = a.id;
+          card.innerHTML = `
+          <button class="watchlist-remove" title="Remove from watchlist" onclick="handleRemove('${
+            a.id
+          }')">✕</button>
+          <div class="card-poster" style="cursor:pointer" onclick="window.location.href='anime-detail.html?id=${
+            a.id
+          }'">
+            <img src="${a.cover}" alt="${a.title}" loading="lazy">
+          </div>
+          <div class="card-info">
+            <div class="card-title">${a.title}</div>
+            <div class="card-meta">
+              <span>${a.year}</span>
+              <span class="card-meta-dot"></span>
+              <span>${a.episodes} EP</span>
+              <span class="card-meta-dot"></span>
+              <span style="color:${
+                a.status === "Ongoing" ? "#4caf50" : "var(--text-muted)"
+              }">${a.status}</span>
+            </div>
+          </div>
+        `;
+          grid.appendChild(card);
+        });
+
+        content.innerHTML = "";
+        content.appendChild(grid);
+      }
+
+      function handleRemove(id) {
+        removeFromWatchlist(id);
+        showToast("Removed from watchlist", "info");
+        renderWatchlistPage();
+      }
+    </script>
+  </body>
+</html>
