@@ -44,6 +44,7 @@ function getDetailUrl(id) {
 //   /data/anime.json            ✓   (local dev if served from root)
 async function loadAnime() {
   try {
+    alert(`${getBasePath()}data/anime.json`);
     const res = await fetch(`${getBasePath()}data/anime.json`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     allAnime = await res.json();
